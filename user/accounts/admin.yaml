@@ -1,0 +1,11 @@
+email: viktorvkostov@gmail.com
+fullname: 'Viktor Kostov'
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$CiUgpPffarL/y8uTQnCkgOHKxhy.jrCn66VQJBsY5e4P0oYhGoN.i
