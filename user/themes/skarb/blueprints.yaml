@@ -1,0 +1,27 @@
+name: Skarb
+version: 0.1.0
+description: Skarb is the default theme for **Skarb Mandriv**
+icon: rebel
+author:
+  name: Viktor Kostov
+  email: viktorvkostov@gmail.com
+homepage: https://github.com/sk8ter/skarb
+demo: http://skarb-mandriv.com.ua
+keywords: grav, theme, etc
+bugs: https://github.com/sk8ter/skarb/issues
+readme: https://github.com/sk8ter/skarb/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
