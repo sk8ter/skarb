@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Default
 ---
 
 # Grav is Running!

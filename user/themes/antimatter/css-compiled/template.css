@@ -40,6 +40,9 @@ b, strong, label, th {
   padding-left: 0;
   padding-right: 0; }
 
+.headerless #body {
+  padding-top: 0; }
+
 #body {
   background: #fff;
   padding-top: 8rem;
@@ -240,13 +243,17 @@ b, strong, label, th {
   .header-image.fullwidth #body > .listing-row {
     padding-left: 7rem;
     padding-right: 7rem; }
+
 .header-image .listing-row:last-child {
   margin-bottom: 2rem; }
+
 .header-image #body .flush-top {
   margin-top: -9.5rem;
   padding-top: 9rem; }
+
 .header-image #breadcrumbs {
   margin-top: 1rem; }
+
 .header-image #header {
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none; }
@@ -311,6 +318,7 @@ h1 {
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   h2 {
     font-size: 2.1rem; } }
+
 @media only all and (max-width: 47.938em) {
   h2 {
     font-size: 2rem; } }
@@ -318,6 +326,7 @@ h1 {
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   h3 {
     font-size: 1.7rem; } }
+
 @media only all and (max-width: 47.938em) {
   h3 {
     font-size: 1.6rem; } }
@@ -325,6 +334,7 @@ h1 {
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   h4 {
     font-size: 1.35rem; } }
+
 @media only all and (max-width: 47.938em) {
   h4 {
     font-size: 1.25rem; } }
@@ -490,6 +500,7 @@ textarea, input[type="email"], input[type="number"], input[type="password"], inp
 
 form .buttons {
   text-align: center; }
+
 form input {
   font-weight: 400; }
 
@@ -698,6 +709,7 @@ td {
 
 .related-pages li a {
   display: block; }
+
 .related-pages .score {
   display: block;
   float: right;
@@ -747,12 +759,15 @@ ul.pagination {
 
 .simplesearch h1 {
   margin-bottom: 0; }
+
 .simplesearch .center {
   text-align: center; }
+
 .simplesearch input {
   display: inline-block;
   max-width: 30rem;
   font-size: 2rem; }
+
 .simplesearch .search-image {
   margin-top: 1rem; }
   .simplesearch .search-image img {
@@ -760,14 +775,17 @@ ul.pagination {
     @media only all and (max-width: 47.938em) {
       .simplesearch .search-image img {
         display: none; } }
+
 @media only all and (max-width: 47.938em) {
   .simplesearch .search-item {
     margin-left: 0; } }
+
 .simplesearch .search-wrapper .search-submit {
   height: 52px;
   padding: 0 10px; }
   .simplesearch .search-wrapper .search-submit img {
     width: 30px; }
+
 .simplesearch .search-details {
   float: right;
   margin-top: -2.5rem;
@@ -779,6 +797,7 @@ ul.pagination {
       float: none;
       margin-top: -0.2rem;
       margin-bottom: 1rem; } }
+
 .simplesearch hr {
   border-bottom: 1px solid #eee; }
 
@@ -795,6 +814,7 @@ ul.pagination {
     color: #FFFFFF; }
   .modular.header-image #header #navbar a {
     color: #FFFFFF; }
+
 .modular .showcase {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -919,5 +939,3 @@ ul.pagination {
 
 .modular .modular-row:last-child {
   margin-bottom: 2rem; }
-
-/*# sourceMappingURL=template.css.map */

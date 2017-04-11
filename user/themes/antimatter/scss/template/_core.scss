@@ -37,6 +37,12 @@ b, strong {
 	}
 }
 
+.headerless {
+	#body {
+		padding-top: 0;
+	}
+}
+
 // Global body styling
 #body {
 	@extend .default-animation;
