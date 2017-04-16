@@ -1,48 +1,31 @@
-{% macro loop(page) %}
-    {% for p in page.children.visible %}
-        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
-        {% if p.children.visible.count > 0 %}
-            <li class="has-children {{ current_page }}">
-                <a href="{{ p.url }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                    {{ p.menu }}
-                </a>
-                <ul>
-                    {{ _self.loop(p) }}
-                </ul>
-            </li>
-        {% else %}
-            <li class="{{ current_page }}">
-                <a href="{{ p.url }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                    {{ p.menu }}
-                </a>
-            </li>
-        {% endif %}
+{% macro loop(pages, class) %}
+    {% for page in pages.children.visible %}
+        {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
+        <a class="nav-item {{ class }} {{ current_page }}" href="{{ page.url }}">
+            {{ page.menu }}
+        </a>
     {% endfor %}
 {% endmacro %}
 
-<ul>
-    {% if theme_config.dropdown.enabled %}
-        {{ _self.loop(pages) }}
-    {% else %}
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ page.url }}">
-                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                    {{ page.menu }}
-                </a>
-            </li>
-        {% endfor %}
-    {% endif %}
-    {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
-                {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                {{ mitem.text }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+<nav class="nav has-shadow">
+    <div class="nav-left">
+        <a class="nav-item nav-logo" href="{{ base_url == '' ? '/' : base_url }}">
+            <img src="{{ url('theme://images/logo.png') }}" alt="Skarb Mandriv logo">
+        </a>
 
+        <!-- This menu is hiden on mobile -->
+        {{ _self.loop(pages, "is-hidden-mobile") }}
+    </div>
+
+    <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+    <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+
+    <div class="nav-right nav-menu">
+        <!-- This menu is visible only on mobile -->
+        {{ _self.loop(pages, "is-hidden-tablet") }}
+    </div>
+</nav>

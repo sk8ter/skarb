@@ -1,0 +1,16 @@
+.nav {
+  min-height: 6rem; }
+
+.nav-right {
+  justify-content: flex-start; }
+
+.nav-item img {
+  max-height: 5rem; }
+
+.nav-toggle {
+  height: 6rem; }
+
+.nav-logo {
+  justify-content: center; }
+
+/*# sourceMappingURL=template.css.map */

@@ -14,14 +14,16 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
-        {% do assets.addCss('theme://css-compiled/bulma.css', 100) %}
-        {% do assets.addCss('theme://css/font-awesome.min.css', 99) %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
+        {% do assets.addCss('theme://css/font-awesome.min.css', 100) %}
+        {% do assets.addCss('theme://css-compiled/bulma.css', 99) %}
+        {% do assets.addCss('theme://css-compiled/template.css', 98) %}
+        {#{% do assets.addCss('theme://css/custom.css', 97) %}#}
     {% endblock %}
     {{ assets.css() }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/custom.js', 99) %}
     {% endblock %}
     {{ assets.js() }}
 
@@ -30,26 +32,16 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+    <header>
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+    </header>
 {% endblock %}
 
 {% block body %}
     <section id="body">
-        <div class="wrapper padding">
         {% block content %}{% endblock %}
-        </div>
     </section>
 {% endblock %}
 
